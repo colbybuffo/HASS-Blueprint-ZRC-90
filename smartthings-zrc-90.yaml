@@ -1,6 +1,6 @@
 blueprint:
   name: Remotec ZRC-90 Scene Master
-  description: Create an automation for the Remotec ZRC-90 8 button remote using ZWAVE-JS integration
+  description: Create an automation for the Remotec ZRC-90 8 button remote using Smart Things integration
   domain: automation
   input:
     remotec_zrc90:
