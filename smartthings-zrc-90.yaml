@@ -8,7 +8,6 @@ blueprint:
       description: The Remotec ZRC-90 to interact with.
       selector:
         device:
-          integration: smartthings
     button_1_1:
       name: Press Button One 1x
       description: Action to run on button press once.
