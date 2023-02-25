@@ -9,8 +9,6 @@ blueprint:
       selector:
         device:
           integration: smartthings
-          manufacturer: Remotec
-          model: BW8510
     button_1_1:
       name: Press Button One 1x
       description: Action to run on button press once.
