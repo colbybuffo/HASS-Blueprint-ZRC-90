@@ -8,7 +8,7 @@ blueprint:
       description: The Remotec ZRC-90 to interact with.
       selector:
         device:
-          integration: Smart Things
+          integration: smartthings
           manufacturer: Remotec
           model: BW8510
     button_1_1:
