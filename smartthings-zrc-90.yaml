@@ -169,7 +169,7 @@ action:
       scene_value_id: '{{ trigger.event.data.value }}'
 
   - choose:
-      - conditions: "{{ scene_id == 'button1' and scene_value_id == 'pressed' }}"
+      - conditions: "{{ scene_id == 'button1' and scene_value_id == 'pushed' }}"
         sequence: !input button_1_1
       - conditions: "{{ scene_id == 'button1' and scene_value_id == 'KeyPressed2x' }}"
         sequence: !input button_1_2     
