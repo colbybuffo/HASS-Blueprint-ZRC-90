@@ -164,7 +164,7 @@ trigger:
   event_data:
     device_id: !input remotec_zrc90
 action:
-- variables:
+  - variables:
     scene_id: '{{ trigger.event.data.component_id }}'
     scene_value_id: '{{ trigger.event.data.value }}'
 
