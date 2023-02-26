@@ -8,6 +8,7 @@ blueprint:
       description: The Remotec ZRC-90 to interact with.
       selector:
         device:
+          integration: smartthings
     button_1_1:
       name: Press Button One 1x
       description: Action to run on button press once.
@@ -159,21 +160,20 @@ max_exceeded: silent
 
 trigger:
   platform: event
-  event_type: zwave_js_value_notification
+  event_type: smartthings.button
   event_data:
-    command_class_name: Central Scene
     device_id: !input remotec_zrc90
 action:
-  - variables:
-      scene_id: "{{ trigger.event.data.property_key_name }}"
-      scene_value_id: "{{ trigger.event.data.value }}"
+- variables:
+    scene_id: '{{ trigger.event.data.component_id }}'
+    scene_value_id: '{{ trigger.event.data.value }}'
 
   - choose:
-      - conditions: "{{ scene_id == '001' and scene_value_id == 'KeyPressed' }}"
+      - conditions: "{{ scene_id == 'button1' and scene_value_id == 'pressed' }}"
         sequence: !input button_1_1
-      - conditions: "{{ scene_id == '001' and scene_value_id == 'KeyPressed2x' }}"
+      - conditions: "{{ scene_id == 'button1' and scene_value_id == 'KeyPressed2x' }}"
         sequence: !input button_1_2     
-      - conditions: "{{ scene_id == '001' and scene_value_id == 'KeyHeldDown' }}"
+      - conditions: "{{ scene_id == 'button1' and scene_value_id == 'held' }}"
         sequence: !input button_1_held
       - conditions: "{{ scene_id == '002' and scene_value_id == 'KeyPressed' }}"
         sequence: !input button_2_1
